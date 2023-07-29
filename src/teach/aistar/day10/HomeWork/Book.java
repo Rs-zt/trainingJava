@@ -87,7 +87,7 @@ public class Book {
         sb.append(", 图书名字: '").append(bookName).append('\'');
         sb.append(", 价格: ").append(price);
         sb.append(", 类型: '").append(type).append('\'');
-        sb.append(", 出版时间: ").append(DateUtil.SimpFormat(createDate,"yyyy年MM月dd日"));
+        sb.append(", 出版时间: ").append(DateUtil.SimpFormat(createDate,"yyyy年MM月dd日")).append("\n");
         return sb.toString();
     }
 }

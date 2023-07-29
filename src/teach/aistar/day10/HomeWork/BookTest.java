@@ -1,6 +1,8 @@
 package teach.aistar.day10.HomeWork;
 
 
+import teach.aistar.day10.HomeWork.PageInfo.BookTeplate;
+
 import java.text.ParseException;
 
 /**
@@ -8,9 +10,8 @@ import java.text.ParseException;
  * @version 1.0
  * @data 2023/7/28 17:16
  */
-public class BookTest {
+public class BookTest  {
     public static void main(String[] args) throws ParseException {
-        page page = new page();
-        page.execute();
+      new page().task();//启动项目
     }
 }

@@ -14,7 +14,9 @@ public abstract class BookTeplate {
                 "2. 查询所有图书\n" +
                 "3. 根据编号删除图书\n" +
                 "4. 根据价格降序排\n" +
-                "5. 统计图书类别数量");
+                "5. 统计图书类别数量\n"+
+                "0. 退出图书管理系统");
+
     }
     public abstract void execute() throws ParseException;
     public final void task() throws ParseException {

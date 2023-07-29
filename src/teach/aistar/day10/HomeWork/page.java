@@ -1,6 +1,7 @@
 package teach.aistar.day10.HomeWork;
 
 import teach.aistar.day10.HomeWork.BookDaoImpl;
+import teach.aistar.day10.HomeWork.PageInfo.BookTeplate;
 
 import java.text.ParseException;
 import java.util.Arrays;
@@ -11,19 +12,13 @@ import java.util.Scanner;
  * @version 1.0
  * @data 2023/7/28 17:45
  */
-public class page {
+public class page extends BookTeplate {
     public void execute() throws ParseException {
         BookDaoImpl bookDao = new BookDaoImpl();
-        int count = 0;
         boolean flag = true;
         while (flag) {
-        System.out.println("======图书管理系统======\n" +
-                "1. 保存图书\n" +
-                "2. 查询所有图书\n" +
-                "3. 根据编号删除图书\n" +
-                "4. 根据价格降序排\n" +
-                "5. 统计图书类别数量\n"+
-                "0. 退出图书管理系统");
+            int count = 0;
+            System.out.println("返回菜单 6\t直接查询 2");
             System.out.println("请输入:>");
             Scanner sc = new Scanner(System.in);
             int s = sc.nextInt();
@@ -38,10 +33,13 @@ public class page {
                     bookDao.delByIsbn();
                     break;
                 case 4:
-                    System.out.println(Arrays.toString(bookDao.sortByPriceDesc()));
+                    bookDao.sortByPriceDesc();
                     break;
                 case 5:
                     bookDao.NumberOfType();
+                    break;
+                case 6:
+                    new page().open();
                     break;
                 case 0:
                     flag=false;

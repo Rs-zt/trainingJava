@@ -21,6 +21,7 @@ public class BookDaoImpl implements IBookDao{
         //表示有效长度
         private int size;
 
+
         public Book[] getDbBook() {
                 return dbBook;
         }
@@ -29,15 +30,10 @@ public class BookDaoImpl implements IBookDao{
                 this.dbBook = dbBook;
         }
 
-        public int getSize() {
-                return size;
-        }
-
-        public void setSize(int size) {
-                this.size = size;
-        }
-
         public void save(Book b) throws ParseException {
+                if (size== dbBook.length){
+                        size++;
+                }
                 while (true){
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("请输入图书ID");
@@ -64,13 +60,14 @@ public class BookDaoImpl implements IBookDao{
 
         @Override
         public Book[] findAll() {
+
                 if (size==0) {
                         System.out.println("当前没有任何书籍。");
                         return null;
                 } else {
                         System.out.println("所有书籍信息如下:");
                         dbBook=Arrays.copyOf(dbBook,size);
-                                System.out.println(Arrays.toString(dbBook));
+                        System.out.println(Arrays.toString(dbBook));
                 }
                 return dbBook;
         }
@@ -93,7 +90,7 @@ public class BookDaoImpl implements IBookDao{
                 if (index!=-1){
                         System.arraycopy(dbBook,index+1,dbBook,index,size-index-1);
                         size--;//删一个减一个
-                        System.out.println("删除图书成功"+dbBook[index]);
+                        System.out.println("删除图书成功");
                 }else {
                         System.out.println("没有此编号图书");
                 }
@@ -114,6 +111,7 @@ public class BookDaoImpl implements IBookDao{
                                 }
                         }
                 }
+                System.out.println(Arrays.toString(dbBook));
                 return dbBook;
         }
 
