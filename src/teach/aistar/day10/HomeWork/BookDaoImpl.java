@@ -31,9 +31,7 @@ public class BookDaoImpl implements IBookDao{
         }
 
         public void save(Book b) throws ParseException {
-                if (size== dbBook.length){
-                        size++;
-                }
+
                 while (true){
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("请输入图书ID");
@@ -51,6 +49,9 @@ public class BookDaoImpl implements IBookDao{
                         Date date=DateUtil.SimpPare(str,"yyyy-MM-dd");
                         scanner.nextLine(); // 读取换行符
                         Book book = new Book(id,isbn,bookname,price,type,date);
+                        if (size == dbBook.length){
+                                dbBook=Arrays.copyOf(dbBook,size+1);
+                        }
                         dbBook[size++]=book;
                         break;
                 }
@@ -60,7 +61,6 @@ public class BookDaoImpl implements IBookDao{
 
         @Override
         public Book[] findAll() {
-
                 if (size==0) {
                         System.out.println("当前没有任何书籍。");
                         return null;
@@ -99,11 +99,10 @@ public class BookDaoImpl implements IBookDao{
         @Override
         public Book[] sortByPriceDesc() {
                 Book temp;
-                int count=0;
                 if(null==dbBook || dbBook.length==0)return dbBook;
 
-                for (int i = 0; i < size-1; i++) {
-                        for (int j = i+1; j < size-1; j++) {
+                for (int i = 0; i < size; i++) {
+                        for (int j = i+1; j < size; j++) {
                                 if(dbBook[i].getPrice()<dbBook[j].getPrice()){
                                         temp=dbBook[i];
                                         dbBook[i]=dbBook[j];
