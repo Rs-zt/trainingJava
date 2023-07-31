@@ -6,5 +6,5 @@ package teach.aistar.design.principle.Fat.v1;
  * @data 2023/7/31 9:29
  */
 public interface Send {
-    void wend();
+    void send();
 }

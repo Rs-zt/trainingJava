@@ -11,7 +11,7 @@ public class test {
     public static void main(String[] args) {
         Send s=SendFactory.getInstance(SendFactory.SMS);
         Send s1=SendFactory.getInstance(SendFactory.EMAIL);
-        s.wend();
-        s1.wend();
+        s.send();
+        s1.send();
     }
 }

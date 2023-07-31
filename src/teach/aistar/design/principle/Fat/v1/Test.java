@@ -9,9 +9,8 @@ public class Test {
     public static void main(String[] args) {
         SendFactory factory = new SendFactory();
         Send s= factory.getInstance("SMS");
-        s.wend();
+        s.send();
         Send s1=factory.getInstance("EMAIL");
-
-        s1.wend();
+        s1.send();
     }
 }

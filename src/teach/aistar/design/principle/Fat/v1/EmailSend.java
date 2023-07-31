@@ -7,7 +7,7 @@ package teach.aistar.design.principle.Fat.v1;
  */
 public class EmailSend implements Send{
     @Override
-    public void wend() {
+    public void send() {
         System.out.println("邮箱通知>>>>>");
     }
 }

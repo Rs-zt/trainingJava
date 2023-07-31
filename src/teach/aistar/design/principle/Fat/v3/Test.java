@@ -11,7 +11,7 @@ public class Test {
     public static void main(String[] args) {
         Factory factory=new PhonehuaweiFactory();
         Send send=factory.CreateSend();
-        send.wend();
+        send.send();
         Call call = factory.CreateCall();
         call.call();
     }
