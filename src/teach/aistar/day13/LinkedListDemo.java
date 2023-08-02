@@ -1,6 +1,7 @@
 package teach.aistar.day13;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -16,12 +17,29 @@ public class LinkedListDemo {
 //            list.add("0");
 //        }
 //        System.out.println((System.currentTimeMillis()-t));
-
-        ArrayList<String> strings = new ArrayList<>();
-        long t=System.currentTimeMillis();
-        for (int i = 0; i < 10000000; i++) {
-            strings.add("0");
+//
+//        ArrayList<String> strings = new ArrayList<>();
+//        long t=System.currentTimeMillis();
+//        for (int i = 0; i < 10000000; i++) {
+//            strings.add("0");
+//        }
+//        System.out.println((System.currentTimeMillis()-t));
+        LinkedList<String> list = new LinkedList<>();
+        list.add("java");
+        list.add("java");
+        list.add("java");
+        list.add(1,"mysql");
+        list.addFirst("python");
+        list.addLast("c++");
+        System.out.println(list.element());
+        list.push("a");
+        list.push("b");
+        list.pop();
+        System.out.println(list);
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()){
+            String b= iterator.next();
+            System.out.println(b);
         }
-        System.out.println((System.currentTimeMillis()-t));
     }
 }
