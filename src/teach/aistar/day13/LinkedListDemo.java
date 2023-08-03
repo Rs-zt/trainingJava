@@ -35,6 +35,9 @@ public class LinkedListDemo {
         list.push("a");
         list.push("b");
         list.pop();
+        list.removeFirst();
+        list.removeLast();
+//        list.remove(1);
         System.out.println(list);
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()){

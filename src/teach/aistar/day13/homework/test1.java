@@ -16,8 +16,6 @@ public class test1 {
 //        String str="{}{}()[]";
         BracketMatch(str);
         System.out.println(BracketMatch(str));
-
-
     }
     public static boolean BracketMatch(String str){
         char[] arr=str.toCharArray();
@@ -40,10 +38,6 @@ public class test1 {
             }
 
         }
-        if (list.isEmpty()){
-            return true;
-        }else {
-            return false;
-        }
+       return list.isEmpty();
     }
 }

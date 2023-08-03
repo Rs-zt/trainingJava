@@ -41,13 +41,13 @@ public class test02 {
         if (result%10==0){
             X=0;
         }else {
-            int res=((result/10)+1)*10;
-            X=res-result;
+            X=10-result%10;
+//            int res=((result/10)+1)*10;
+//            X=res-result;
         }
         if (X==(str1[str1.length-1]-48)){
             return true;
         }else {
-
             return false;
         }
     }
