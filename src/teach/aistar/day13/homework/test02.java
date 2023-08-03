@@ -1,5 +1,7 @@
 package teach.aistar.day13.homework;
 
+import java.util.Scanner;
+
 /**
  * @author 任胜
  * @version 1.0
@@ -7,14 +9,19 @@ package teach.aistar.day13.homework;
  */
 public class test02 {
     public static void main(String[] args) {
-        String str="6902827110013";
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入条形码");
+        String str = sc.next();
+//        String str="6902827110013";
         System.out.println(jiaoyanma(str));
 
 
     }
     //条形码
     public static boolean jiaoyanma(String str){
+        if (!str.matches("\\d{13}")){
+            System.out.println("条形码输入错误!!!");
+        }
         int X=0;
         char[] str1=str.toCharArray();
         int sum=0;

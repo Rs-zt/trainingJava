@@ -1,6 +1,7 @@
 package teach.aistar.day13.homework;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 /**
  * @author 任胜
@@ -9,7 +10,10 @@ import java.util.LinkedList;
  */
 public class test1 {
     public static void main(String[] args) {
-        String str="{([][][][][])}";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入:>");
+        String str = sc.next();
+//        String str="{}{}()[]";
         BracketMatch(str);
         System.out.println(BracketMatch(str));
 
@@ -21,14 +25,14 @@ public class test1 {
         list.push(arr[0]);
         for (int i = 1; i < arr.length; i++) {
             if (arr[i]=='('||arr[i]==')'){
-                if (arr[i]!= list.getFirst()+1){
+                if (list.isEmpty()||arr[i]!= list.getFirst()+1){
                     list.push(arr[i]);
                 }else {
                     list.pop();
                 }
             }
             else {
-                if (arr[i]!= list.getFirst()+2){
+                if (list.isEmpty()||arr[i]!= list.getFirst()+2){
                     list.push(arr[i]);
                 }else {
                     list.pop();

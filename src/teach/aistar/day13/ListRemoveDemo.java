@@ -24,8 +24,8 @@ public class ListRemoveDemo {
         //根据下标删除,b3和b4会认为同一个对象
 //        System.out.println(b3.equals(b4));
 //        list.remove(b4);
-        delPrice6(list,150.0d);
-        System.out.println(list);
+        delPrice4(list,150.0d);
+//        System.out.println(list);
     }
 
     private static void delPrice2(ArrayList<Book> list, double price) {
@@ -58,6 +58,7 @@ public class ListRemoveDemo {
         Iterator<Book> iter= list.iterator();
         while (iter.hasNext()){
             Book next = iter.next();
+            System.out.println(next);
             if (next.getPrice()<=price){
                 list.remove(next);
             }
