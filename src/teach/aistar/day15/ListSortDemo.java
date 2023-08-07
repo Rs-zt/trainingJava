@@ -3,6 +3,7 @@ package teach.aistar.day15;
 import teach.aistar.day14.homework.Purcase;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -32,12 +33,12 @@ public class ListSortDemo {
         list.add(p7);
         list.add(p8);
 
-//        list.sort(new Comparator<Purcase>() {
-//            @Override
-//            public int compare(Purcase o1, Purcase o2) {
-//                return (int) (o1.getCost()-o2.getCost());
-//            }
-//        });
+        list.sort(new Comparator<Purcase>() {
+            @Override
+            public int compare(Purcase o1, Purcase o2) {
+                return (int) (o1.getCost()-o2.getCost());
+            }
+        });
 
         list.sort((o1,o2)-> (int) (o1.getCost()-o2.getCost()));
 

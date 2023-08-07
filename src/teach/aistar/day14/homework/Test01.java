@@ -47,9 +47,9 @@ public class Test01 {
                 valueList.add(p);
                 //添加到maps集合中
                 maps.put(brand,valueList);
-//                System.out.println(maps);
             }
         }
+        System.out.println(maps);
         //统计
         HashMap<String, Double> countMap = new HashMap<>();
         maps.forEach((k,v)->{

@@ -1,11 +1,14 @@
 package teach.aistar.day15;
 
+import java.util.Objects;
+
 /**
  * @author 任胜
  * @version 1.0
  * @data 2023/8/4 10:27
  */
-public class PurcaseX implements Comparable{
+//public class PurcaseX implements Comparable{
+public class PurcaseX{
     private String brand;
     private Double total;
 
@@ -34,6 +37,19 @@ public class PurcaseX implements Comparable{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PurcaseX purcaseX = (PurcaseX) o;
+        return Objects.equals(brand, purcaseX.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand);
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("PurcaseX{");
         sb.append("brand='").append(brand).append('\'');
@@ -42,10 +58,10 @@ public class PurcaseX implements Comparable{
         return sb.toString();
     }
 
-    @Override
-    public int compareTo(Object o) {
-        PurcaseX x = (PurcaseX) o;
-        return (int) (this.getTotal() - x.getTotal());
-    }
+//    @Override
+//    public int compareTo(Object o) {
+//        PurcaseX x = (PurcaseX) o;
+//        return (int) (this.getTotal() - x.getTotal());
+//    }
 
 }

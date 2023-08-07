@@ -14,6 +14,7 @@ public class HashMapDemo {
         hashMap.put(2,"bbb");
         hashMap.put(3,"ccc");
         hashMap.put(3,"ddd");
+
         //获取map集合大小
         System.out.println(hashMap.size());
         //判断集合中的是否有key
