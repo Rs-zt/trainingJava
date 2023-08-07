@@ -17,11 +17,14 @@ public class test02 {
         }
         catch (ClassNotFoundException e){
             System.out.println(e.getMessage()+"=====");
+//            System.exit(1);
         }
         catch (ParseException e){
             System.out.println(e.getMessage());
         }catch (Exception e){
             System.out.println(e.getMessage());
+        }finally {
+            System.out.println("finally");
         }
 //        System.out.println("jdk7.x-------");
 //            try {
