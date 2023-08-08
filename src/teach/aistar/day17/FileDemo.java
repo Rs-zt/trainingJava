@@ -19,9 +19,34 @@ public class FileDemo {
 //        createFolder("src\\teach\\aistar\\day17\\aa\\b\\c");
 //        deleteFileFolder("src\\teach\\aistar\\day17\\aa\\b\\c");
 //        listFile("E:\\CX_peixun\\demo3\\src");
-//        listAllFIle("E:\\CX_peixun\\demo3");
-        listAllFileWithSuffix("E:\\CX_peixun\\demo3\\src\\teach\\aistar\\day17\\","(\\w{8}(-\\w{4}){3}-\\w{12}.*)");
+//        listAllFIle("E:\\CX_peixun\\demo3\\src\\teach\\aistar\\day17\\aa");
+        deleteAllFIle("E:\\CX_peixun\\demo3\\src\\teach\\aistar\\day17\\aa");
+//        listAllFileWithSuffix("E:\\CX_peixun\\demo3\\src\\teach\\aistar\\day17\\","(\\w{8}(-\\w{4}){3}-\\w{12}.*)");
 
+    }
+
+    private static void deleteAllFIle(String s) {
+        //1. 构建file实例
+        File file = new File(s);
+        //2. 判断一下是否存在
+        if(!file.exists()){
+            System.out.println("sorry!"+file+"不存在");
+            return;
+        }
+        //3. 保证file是一个文件夹
+        if(file.isDirectory()) {
+            //返回给定的目录下的第一层的所有的file
+            File[] files = file.listFiles();
+            for (File f : files) {
+                //如果是目录 - 绝对路径
+                if (f.isDirectory()) {
+                    deleteAllFIle(f.getAbsolutePath());
+                } else if (f.isFile()) {
+                    f.delete();
+                }
+            }
+            file.delete();
+        }
     }
 
     private static void listAllFileWithSuffix(String folderPath, String suffix) {
